@@ -1,0 +1,536 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+<div class="form">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>ポケモンシルエットクイズ</h1>
+				<p>
+				ルール
+				</p>
+				<p>
+				1. ポケモン名前を入力していってください
+				</p>
+				<p>
+				2. 回答可能部分を埋めた後送信してください
+				</p>
+				<p>
+				3. ニドランに限り「ニドラン♂ 」「ニドラン♀ 」か回答してください
+				</p>
+
+				<p class="point">
+					{% if point %}
+						ポイント : {{point}} / 100
+					{% endif %}
+				</p>
+
+				<p>第1問</p>
+				<p class="lead">
+					{% if pokemon_name1 %}
+						正解 : {{pokemon_name1}}
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					 {% if anser1 %}
+						あなたの答え : {{anser1}}
+					 {% endif %}
+				</p>
+
+				<p>
+					{% if img_path1 %}
+						<img src="{{img_path1}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+				<form action="/post" method="post" class="form-inline">
+					<label for="anser1">名前</label>
+					<input type="text" class="form-control" id="anser1" name="anser1" placeholder="anser1">
+					<button type="submit" class="btn btn-default">送信する</button>
+
+
+				<p>第2問</p>
+				<p class="lead">
+					{% if pokemon_name2 %}
+						答えは {{pokemon_name2}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser2 %}
+						あなたの答え : {{anser2}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path2 %}
+						<img src="{{img_path2}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser2">名前</label>
+					<input type="text" class="form-control" id="anser2" name="anser2" placeholder="anser2">
+
+
+				<p>第3問</p>
+				<p class="lead">
+					{% if pokemon_name3 %}
+						答えは {{pokemon_name3}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser3 %}
+						あなたの答え : {{anser3}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path3 %}
+						<img src="{{img_path3}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser3">名前</label>
+					<input type="text" class="form-control" id="anser3" name="anser3" placeholder="anser3">
+
+
+				<p>第4問</p>
+				<p class="lead">
+					{% if pokemon_name4 %}
+						答えは {{pokemon_name4}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser4 %}
+						あなたの答え : {{anser4}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path4 %}
+						<img src="{{img_path4}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser4">名前</label>
+					<input type="text" class="form-control" id="anser4" name="anser4" placeholder="anser4">
+
+
+				<p>第5問</p>
+				<p class="lead">
+					{% if pokemon_name5 %}
+						答えは {{pokemon_name5}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser5 %}
+						あなたの答え : {{anser5}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path5 %}
+						<img src="{{img_path5}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser5">名前</label>
+					<input type="text" class="form-control" id="anser5" name="anser5" placeholder="anser5">
+
+
+				<p>第6問</p>
+				<p class="lead">
+					{% if pokemon_name6 %}
+						答えは {{pokemon_name6}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser6 %}
+						あなたの答え : {{anser6}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path6 %}
+						<img src="{{img_path6}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser6">名前</label>
+					<input type="text" class="form-control" id="anser6" name="anser6" placeholder="anser6">
+
+
+				<p>第7問</p>
+				<p class="lead">
+					{% if pokemon_name7 %}
+						答えは {{pokemon_name7}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser7 %}
+						あなたの答え : {{anser7}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path7 %}
+						<img src="{{img_path7}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser7">名前</label>
+					<input type="text" class="form-control" id="anser7" name="anser7" placeholder="anser7">
+
+
+				<p>第8問</p>
+				<p class="lead">
+					{% if pokemon_name8 %}
+						答えは {{pokemon_name8}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser8 %}
+						あなたの答え : {{anser8}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path8 %}
+						<img src="{{img_path8}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser8">名前</label>
+					<input type="text" class="form-control" id="anser8" name="anser8" placeholder="anser8">
+
+
+				<p>第9問</p>
+				<p class="lead">
+					{% if pokemon_name9 %}
+						答えは {{pokemon_name9}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser9 %}
+						あなたの答え : {{anser9}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path9 %}
+						<img src="{{img_path9}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser9">名前</label>
+					<input type="text" class="form-control" id="anser9" name="anser9" placeholder="anser9">
+
+
+				<p>第10問</p>
+				<p class="lead">
+					{% if pokemon_name10 %}
+						答えは {{pokemon_name10}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser10 %}
+						あなたの答え : {{anser10}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path10 %}
+						<img src="{{img_path10}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser10">名前</label>
+					<input type="text" class="form-control" id="anser10" name="anser10" placeholder="anser10">
+
+
+				<p>第11問</p>
+				<p class="lead">
+					{% if pokemon_name11 %}
+						答えは {{pokemon_name11}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser11 %}
+						あなたの答え : {{anser11}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path11 %}
+						<img src="{{img_path11}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser11">名前</label>
+					<input type="text" class="form-control" id="anser11" name="anser11" placeholder="anser11">
+
+
+				<p>第12問</p>
+				<p class="lead">
+					{% if pokemon_name12 %}
+						答えは {{pokemon_name12}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser12 %}
+						あなたの答え : {{anser12}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path12 %}
+						<img src="{{img_path12}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser12">名前</label>
+					<input type="text" class="form-control" id="anser12" name="anser12" placeholder="anser12">
+
+
+				<p>第13問</p>
+				<p class="lead">
+					{% if pokemon_name13 %}
+						答えは {{pokemon_name13}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser13 %}
+						あなたの答え : {{anser13}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path13 %}
+						<img src="{{img_path13}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser13">名前</label>
+					<input type="text" class="form-control" id="anser13" name="anser13" placeholder="anser13">
+
+
+				<p>第14問</p>
+				<p class="lead">
+					{% if pokemon_name14 %}
+						答えは {{pokemon_name14}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser14 %}
+						あなたの答え : {{anser14}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path14 %}
+						<img src="{{img_path14}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser14">名前</label>
+					<input type="text" class="form-control" id="anser14" name="anser14" placeholder="anser14">
+
+
+				<p>第15問</p>
+				<p class="lead">
+					{% if pokemon_name15 %}
+						答えは {{pokemon_name15}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser15 %}
+						あなたの答え : {{anser15}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path15 %}
+						<img src="{{img_path15}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser15">名前</label>
+					<input type="text" class="form-control" id="anser15" name="anser15" placeholder="anser15">
+
+
+				<p>第16問</p>
+				<p class="lead">
+					{% if pokemon_name16 %}
+						答えは {{pokemon_name16}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser16 %}
+						あなたの答え : {{anser16}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path16 %}
+						<img src="{{img_path16}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser16">名前</label>
+					<input type="text" class="form-control" id="anser16" name="anser16" placeholder="anser16">
+
+
+				<p>第17問</p>
+				<p class="lead">
+					{% if pokemon_name17 %}
+						答えは {{pokemon_name17}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser17 %}
+						あなたの答え : {{anser17}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path17 %}
+						<img src="{{img_path17}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser17">名前</label>
+					<input type="text" class="form-control" id="anser17" name="anser17" placeholder="anser17">
+
+
+				<p>第18問</p>
+				<p class="lead">
+					{% if pokemon_name18 %}
+						答えは {{pokemon_name18}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser18 %}
+						あなたの答え : {{anser18}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path18 %}
+						<img src="{{img_path18}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser18">名前</label>
+					<input type="text" class="form-control" id="anser18" name="anser18" placeholder="anser18">
+
+
+				<p>第19問</p>
+				<p class="lead">
+					{% if pokemon_name19 %}
+						答えは {{pokemon_name19}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser19 %}
+						あなたの答え : {{anser19}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path19 %}
+						<img src="{{img_path19}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser19">名前</label>
+					<input type="text" class="form-control" id="anser19" name="anser19" placeholder="anser19">
+
+
+				<p>第20問</p>
+				<p class="lead">
+					{% if pokemon_name20 %}
+						答えは {{pokemon_name20}} です
+					{% else %}
+						このポケモンの名前は何でしょう?
+					{% endif %}
+				</p>
+
+				<p class="lead">
+					{% if anser20 %}
+						あなたの答え : {{anser20}}
+					{% endif %}
+				</p>
+
+				<p>
+					{% if img_path20 %}
+						<img src="{{img_path20}}" alt="pokemon">
+					{% endif %}
+				</p>
+
+					<label for="anser20">名前</label>
+					<input type="text" class="form-control" id="anser20" name="anser20" placeholder="anser20">
+					<button type="submit" class="btn btn-default">送信する</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
